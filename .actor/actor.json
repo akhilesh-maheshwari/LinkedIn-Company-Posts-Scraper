@@ -1,0 +1,50 @@
+{
+  "actorSpecification": 1,
+  "name": "linkedin-company-posts-scraper-no-cookies",
+  "title": "LinkedIn Company Posts Scraper (No Cookies)",
+  "description": "Scrape LinkedIn company posts including post content, likes, comments, shares, and more. No LinkedIn cookies required.",
+  "version": "1.0.0",
+  "buildTag": "latest",
+  "environmentVariables": {},
+  "dockerfile": "../Dockerfile",
+  "readme": "../README.md",
+  "input": "./INPUT_SCHEMA.json",
+  "storages": {
+    "dataset": {
+      "actorSpecification": 1,
+      "fields": {},
+      "views": {
+        "overview": {
+          "title": "LinkedIn Company Posts",
+          "transformation": {
+            "fields": [
+              "companyName",
+              "companyUrl",
+              "postUrl",
+              "postContent",
+              "likes",
+              "comments",
+              "shares",
+              "postedAt",
+              "scrapedAt"
+            ]
+          },
+          "display": {
+            "component": "table",
+            "properties": {
+              "companyName":  { "label": "Company Name",  "format": "text"     },
+              "companyUrl":   { "label": "Company URL",   "format": "link"     },
+              "postUrl":      { "label": "Post URL",      "format": "link"     },
+              "postContent":  { "label": "Post Content",  "format": "text"     },
+              "likes":        { "label": "Likes",         "format": "number"   },
+              "comments":     { "label": "Comments",      "format": "number"   },
+              "shares":       { "label": "Shares",        "format": "number"   },
+              "postedAt":     { "label": "Posted At",     "format": "datetime" },
+              "scrapedAt":    { "label": "Scraped At",    "format": "datetime" }
+            }
+          }
+        }
+      }
+    }
+  }
+}
