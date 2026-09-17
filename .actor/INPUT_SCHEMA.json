@@ -1,0 +1,31 @@
+{
+  "title": "LinkedIn Company Posts Scraper (No Cookies)",
+  "description": "Scrape LinkedIn company posts without requiring cookies. Provide company URLs to get their latest posts.",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "companyUrls": {
+      "title": "Company LinkedIn URLs",
+      "type": "array",
+      "description": "List of LinkedIn company page URLs to scrape posts from. Example: https://www.linkedin.com/company/google",
+      "editor": "stringList",
+      "default": [
+        "https://www.linkedin.com/company/google",
+        "https://www.linkedin.com/company/microsoft"
+      ],
+      "prefill": [
+        "https://www.linkedin.com/company/google",
+        "https://www.linkedin.com/company/microsoft"
+      ]
+    },
+    "fileName": {
+      "title": "File Name",
+      "type": "string",
+      "description": "Tag name for this run. Used to identify your output file. Example: my-company-posts-batch-1",
+      "editor": "textfield",
+      "default": "my-company-posts",
+      "prefill": "my-company-posts"
+    }
+  },
+  "required": ["fileName"]
+}
