@@ -1,30 +1,57 @@
 {
   "title": "LinkedIn Company Posts Scraper (No Cookies)",
-  "description": "Scrape LinkedIn company posts without requiring cookies. Provide company URLs to get their latest posts.",
+  "description": "Scrape LinkedIn company posts without requiring cookies.",
   "type": "object",
   "schemaVersion": 1,
   "properties": {
-    "companyUrls": {
-      "title": "Company LinkedIn URLs",
+    "companies": {
+      "title": "Companies",
       "type": "array",
-      "description": "List of LinkedIn company page URLs to scrape posts from. Example: https://www.linkedin.com/company/google",
+      "description": "Add one or more companies. You can provide a LinkedIn URL (https://www.linkedin.com/company/google), a username/slug (google), or a company name (Google LLC).",
       "editor": "stringList",
       "default": [
-        "https://www.linkedin.com/company/google",
-        "https://www.linkedin.com/company/microsoft"
+        "https://www.linkedin.com/company/google"
       ],
       "prefill": [
-        "https://www.linkedin.com/company/google",
-        "https://www.linkedin.com/company/microsoft"
+        "https://www.linkedin.com/company/google"
       ]
     },
     "fileName": {
       "title": "File Name",
       "type": "string",
-      "description": "Tag name for this run. Used to identify your output file. Example: my-company-posts-batch-1",
+      "description": "Tag name for this run. Used to identify your output file. Example: google-posts-june",
       "editor": "textfield",
       "default": "my-company-posts",
       "prefill": "my-company-posts"
+    },
+    "maxPosts": {
+      "title": "Max Posts Per Company",
+      "type": "integer",
+      "description": "Maximum number of posts to scrape per company. Set to 0 for unlimited.",
+      "editor": "number",
+      "default": 50,
+      "minimum": 0
+    },
+    "postsAfterDate": {
+      "title": "Scrape Posts After Date",
+      "type": "string",
+      "description": "Only scrape posts published after this date. Format: YYYY-MM-DD. Leave empty to get all posts.",
+      "editor": "textfield",
+      "default": "",
+      "prefill": "2024-01-01"
+    },
+    "includeReposts": {
+      "title": "Include Reposts",
+      "type": "boolean",
+      "description": "Set to true to include reposts (reshared posts) in results. Set to false to get only original posts.",
+      "default": false
+    },
+    "orderId": {
+      "title": "Order ID (Optional)",
+      "type": "string",
+      "description": "Optional order ID to tag this run. Useful for tracking requests.",
+      "editor": "textfield",
+      "default": ""
     }
   },
   "required": ["fileName"]
