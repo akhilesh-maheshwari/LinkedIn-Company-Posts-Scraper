@@ -18,7 +18,7 @@ try {
   const serviceName       = 'LinkedIn Company Posts';
   const serviceOption1    = 'linkedin-company-posts';
   const requestSource     = 'LinkedIn_Company_Posts_AP';
-  const boomerangInputUrl = 'https://linkedinprivate-n8n.boomerangserver.co.in/webhook/company-posts-request';
+  const boomerangInputUrl = 'https://linkedinprivate-n8n.boomerangserver.co.in/webhook/private-company-posts';
   const boomerangStatUrl  = 'https://linkedinprivate-n8n.boomerangserver.co.in/webhook/company-posts-stats';
 
   console.log('Tag Name       :', serviceTagName);
