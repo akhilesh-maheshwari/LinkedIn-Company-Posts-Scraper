@@ -4,17 +4,13 @@
   "type": "object",
   "schemaVersion": 1,
   "properties": {
-    "companies": {
-      "title": "Companies",
-      "type": "array",
-      "description": "Add one or more companies. You can provide a LinkedIn URL (https://www.linkedin.com/company/google), a username/slug (google), or a company name (Google LLC).",
-      "editor": "stringList",
-      "default": [
-        "https://www.linkedin.com/company/google"
-      ],
-      "prefill": [
-        "https://www.linkedin.com/company/google"
-      ]
+    "company": {
+      "title": "Company",
+      "type": "string",
+      "description": "LinkedIn company URL (https://www.linkedin.com/company/google), username/slug (google), or company name (Google LLC).",
+      "editor": "textfield",
+      "default": "https://www.linkedin.com/company/google",
+      "prefill": "https://www.linkedin.com/company/google"
     },
     "fileName": {
       "title": "File Name",
@@ -27,7 +23,7 @@
     "maxPosts": {
       "title": "Max Posts Per Company",
       "type": "integer",
-      "description": "Maximum number of posts to scrape per company. Set to 0 for unlimited.",
+      "description": "Maximum number of posts to scrape. Set to 0 for unlimited.",
       "editor": "number",
       "default": 50,
       "minimum": 0
@@ -43,7 +39,7 @@
     "includeReposts": {
       "title": "Include Reposts",
       "type": "boolean",
-      "description": "Set to true to include reposts (reshared posts) in results. Set to false to get only original posts.",
+      "description": "Set to true to include reposts in results. Set to false for original posts only.",
       "default": false
     },
     "orderId": {
