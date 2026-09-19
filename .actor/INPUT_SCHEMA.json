@@ -31,9 +31,9 @@
     "postsAfterDate": {
       "title": "Scrape Posts After Date",
       "type": "string",
-      "description": "Only scrape posts published after this date. Format: YYYY-MM-DD. Leave empty to get all posts.",
+      "description": "Only scrape posts published after this date. Format: YYYY-MM-DD.",
       "editor": "textfield",
-      "default": "",
+      "default": "2026-08-01",
       "prefill": "2026-08-01"
     },
     "includeReposts": {
@@ -50,5 +50,5 @@
       "default": ""
     }
   },
-  "required": ["fileName"]
+  "required": ["company", "fileName", "postsAfterDate"]
 }
