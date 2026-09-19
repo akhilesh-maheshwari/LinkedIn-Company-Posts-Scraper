@@ -34,7 +34,7 @@
       "description": "Only scrape posts published after this date. Format: YYYY-MM-DD. Leave empty to get all posts.",
       "editor": "textfield",
       "default": "",
-      "prefill": "2024-01-01"
+      "prefill": "2026-08-01"
     },
     "includeReposts": {
       "title": "Include Reposts",
