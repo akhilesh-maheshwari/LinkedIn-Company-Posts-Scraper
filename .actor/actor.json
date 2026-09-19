@@ -1,46 +1,53 @@
-"overview": {
-  "title": "LinkedIn Company Posts",
-  "transformation": {
-    "fields": [
-      "input_company",
-      "company_name",
-      "company_linkedin_url",
-      "company_id",
-      "company_followers",
-      "fetch_status",
-      "post_id",
-      "post_url",
-      "posted_at",
-      "post_text",
-      "reaction_count",
-      "comment_count",
-      "repost_count",
-      "impressions_count",
-      "is_repost",
-      "media_types",
-      "media_urls"
-    ]
-  },
-  "display": {
-    "component": "table",
+{
+  "actorSpecification": 1,
+  "name": "linkedin-company-posts-scraper-no-cookies",
+  "title": "LinkedIn Company Posts Scraper (No Cookies)",
+  "description": "Scrape LinkedIn company posts including post content, likes, comments, shares, and more. No LinkedIn cookies required.",
+  "version": "1.0",
+  "output": {
+    "actorOutputSchemaVersion": 1,
+    "title": "LinkedIn Company Posts Output",
+    "description": "Scraped LinkedIn company post data including post content, reactions, comments, reposts, and media.",
     "properties": {
-      "input_company":        { "label": "Input Company",        "format": "link"     },
-      "company_name":         { "label": "Company Name",         "format": "text"     },
-      "company_linkedin_url": { "label": "Company LinkedIn URL", "format": "link"     },
-      "company_id":           { "label": "Company ID",           "format": "text"     },
-      "company_followers":    { "label": "Followers",            "format": "text"     },
-      "fetch_status":         { "label": "Fetch Status",         "format": "text"     },
-      "post_id":              { "label": "Post ID",              "format": "text"     },
-      "post_url":             { "label": "Post URL",             "format": "link"     },
-      "posted_at":            { "label": "Posted At",            "format": "datetime" },
-      "post_text":            { "label": "Post Text",            "format": "text"     },
-      "reaction_count":       { "label": "Reactions",            "format": "number"   },
-      "comment_count":        { "label": "Comments",             "format": "number"   },
-      "repost_count":         { "label": "Reposts",              "format": "number"   },
-      "impressions_count":    { "label": "Impressions",          "format": "number"   },
-      "is_repost":            { "label": "Is Repost",            "format": "text"     },
-      "media_types":          { "label": "Media Types",          "format": "text"     },
-      "media_urls":           { "label": "Media URLs",           "format": "text"     }
+      "results": {
+        "type": "string",
+        "title": "LinkedIn Company Posts",
+        "template": "{{links.apiDefaultDatasetUrl}}/items"
+      }
+    }
+  },
+  "storages": {
+    "dataset": {
+      "actorSpecification": 1,
+      "views": {
+        "overview": {
+          "title": "Overview",
+          "transformation": {
+            "fields": [
+              "input_company",
+              "company_name",
+              "company_linkedin_url",
+              "company_id",
+              "company_followers",
+              "fetch_status",
+              "post_id",
+              "post_url",
+              "posted_at",
+              "post_text",
+              "reaction_count",
+              "comment_count",
+              "repost_count",
+              "impressions_count",
+              "is_repost",
+              "media_types",
+              "media_urls"
+            ]
+          },
+          "display": {
+            "component": "table"
+          }
+        }
+      }
     }
   }
 }
